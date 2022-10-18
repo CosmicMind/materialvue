@@ -1,23 +1,32 @@
 /* Copyright (C) 2022, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. */
 
 import {
-	PropType,
-	defineComponent,
+	h,
+	VNode,
+	SetupContext,
 } from 'vue'
 
 import {
-	Typography,
 	TypographyStyle,
+	TypographySize,
 } from '@/typography/Typography'
 
-export const Title = defineComponent({
-	extends: Typography,
-	props: {
-		style: {
-			type: String as PropType<TypographyStyle.title>,
-			default: TypographyStyle.title,
-		},
-	},
+export type TitleProps = {
+	size: TypographySize
+}
+
+export const Title = ({
+	size,
+}: TitleProps, {
+	slots,
+}: SetupContext): VNode => h('span', {
+	class: `typography ${TypographyStyle.title} ${size}`,
+}, {
+	default: () => slots.default?.(),
 })
+
+Title.props = [
+	'size'
+]
 
 export default Title

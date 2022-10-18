@@ -3,8 +3,7 @@
 import {
 	h,
 	VNode,
-	PropType,
-	defineComponent,
+	SetupContext,
 } from 'vue'
 
 export enum TypographyStyle {
@@ -21,24 +20,25 @@ export enum TypographySize {
   small = 'small',
 }
 
-export const Typography = defineComponent({
-	props: {
-		style: {
-			type: String as PropType<TypographyStyle>,
-			default: TypographyStyle.title,
-		},
-		size: {
-			type: String as PropType<TypographySize>,
-			default: TypographySize.small,
-		},
-	},
-	render(): VNode {
-		return h('span', {
-			class: `typography ${this.$props.style} ${this.$props.size}`,
-		}, {
-			default: () => this.$slots.default?.(),
-		})
-	},
+export type TypographyProps = {
+	style: TypographyStyle,
+	size: TypographySize
+}
+
+export const Typography = ({
+	style,
+	size,
+}: TypographyProps, {
+	slots,
+}: SetupContext): VNode => h('span', {
+	class: `typography ${style} ${size}`,
+}, {
+	default: () => slots.default?.(),
 })
+
+Typography.props = [
+	'style',
+	'size'
+]
 
 export default Typography

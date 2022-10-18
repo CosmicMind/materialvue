@@ -1,23 +1,32 @@
 /* Copyright (C) 2022, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. */
 
 import {
-	PropType,
-	defineComponent,
+	h,
+	VNode,
+	SetupContext,
 } from 'vue'
 
 import {
-	Typography,
 	TypographyStyle,
+	TypographySize,
 } from '@/typography/Typography'
 
-export const Label = defineComponent({
-	extends: Typography,
-	props: {
-		style: {
-			type: String as PropType<TypographyStyle.label>,
-			default: TypographyStyle.label,
-		},
-	},
+export type LabelProps = {
+	size: TypographySize
+}
+
+export const Label = ({
+	size,
+}: LabelProps, {
+	slots,
+}: SetupContext): VNode => h('span', {
+	class: `typography ${TypographyStyle.label} ${size}`,
+}, {
+	default: () => slots.default?.(),
 })
+
+Label.props = [
+	'size'
+]
 
 export default Label
