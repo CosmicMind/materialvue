@@ -2,20 +2,20 @@
 
 export {
 	Row,
-} from '@/layout/Row'
+} from './Row'
 
 export {
 	RowStart,
-} from '@/layout/RowStart'
+} from './RowStart'
 
 export {
 	RowCenter,
-} from '@/layout/RowCenter'
+} from './RowCenter'
 
 export {
 	RowEnd,
-} from '@/layout/RowEnd'
+} from './RowEnd'
 
 export {
 	Column,
-} from '@/layout/Column'
+} from './Column'
