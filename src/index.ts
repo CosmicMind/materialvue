@@ -19,9 +19,6 @@ export {
 } from './buttons'
 
 export {
-	AppMain,
-	Content,
-	ContentMain,
 	Finder,
 	Modal,
 	NavigationBar,

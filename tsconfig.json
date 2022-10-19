@@ -35,7 +35,7 @@
       "webworker"
     ],
     "rootDirs": [
-      "./"
+      "."
     ],
     "baseUrl": ".",
     "paths": {
@@ -48,6 +48,7 @@
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.js",
+    "src/**/*.jsx",
     "src/**/*.vue",
     "typings/**/*.d.ts",
     "vite.config*.ts"
