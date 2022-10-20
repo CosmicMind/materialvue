@@ -12,6 +12,7 @@ import {
 } from 'vite'
 
 import dts from 'vite-plugin-dts'
+import vue from '@vitejs/plugin-vue'
 
 const packageName = process.env.npm_package_name
 const packageVersion = JSON.stringify(process.env.npm_package_version)
@@ -50,6 +51,7 @@ export default defineConfig(() => {
 		},
 		plugins: [
 			CustomHmr(),
+			vue(),
 			dts()
 		],
 		build: {
