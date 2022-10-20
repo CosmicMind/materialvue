@@ -41,7 +41,7 @@ export type IconProps = {}
 export const Icon = (_: IconProps, {
 	slots,
 }: SetupContext): VNode => h('span', {
-	class: 'icon',
+	class: 'material-symbols-outlined',
 }, {
 	default: () => slots.default?.(),
 })
