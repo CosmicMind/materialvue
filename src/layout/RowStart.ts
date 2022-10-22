@@ -33,14 +33,14 @@
 import {
 	h,
 	VNode,
-	SetupContext,
+	FunctionalComponent,
 } from 'vue'
 
 export type RowStartProps = {}
 
-export const RowStart = (_: RowStartProps, {
+export const RowStart: FunctionalComponent<RowStartProps> = (_, {
 	slots,
-}: SetupContext): VNode => h('div', {
+}): VNode => h('div', {
 	class: 'row-start',
 }, {
 	default: () => slots.default?.(),

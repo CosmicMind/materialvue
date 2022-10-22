@@ -33,14 +33,14 @@
 import {
 	h,
 	VNode,
-	SetupContext,
+	FunctionalComponent,
 } from 'vue'
 
 export type FinderProps = {}
 
-export const Finder = (_: FinderProps, {
+export const Finder: FunctionalComponent<FinderProps> = (_, {
 	slots,
-}: SetupContext): VNode => h('div', {
+}): VNode => h('div', {
 	class: 'finder',
 }, {
 	default: () => slots.default?.(),

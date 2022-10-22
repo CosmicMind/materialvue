@@ -33,14 +33,14 @@
 import {
 	h,
 	VNode,
-	SetupContext,
+	FunctionalComponent,
 } from 'vue'
 
 export type SidebarProps = {}
 
-export const Sidebar = (_: SidebarProps, {
+export const Sidebar: FunctionalComponent<SidebarProps> = (_, {
 	slots,
-}: SetupContext): VNode => h('div', {
+}): VNode => h('div', {
 	class: 'sidebar',
 }, {
 	default: () => slots.default?.(),

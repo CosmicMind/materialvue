@@ -33,14 +33,14 @@
 import {
 	h,
 	VNode,
-	SetupContext,
+	FunctionalComponent,
 } from 'vue'
 
 export type ListItemProps = {}
 
-export const ListItem = (_: ListItemProps, {
+export const ListItem: FunctionalComponent<ListItemProps> = (_, {
 	slots,
-}: SetupContext): VNode => h('li', {
+}): VNode => h('li', {
 	class: 'list-item',
 }, {
 	default: () => slots.default?.(),

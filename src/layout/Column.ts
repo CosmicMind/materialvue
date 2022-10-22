@@ -33,14 +33,14 @@
 import {
 	h,
 	VNode,
-	SetupContext,
+	FunctionalComponent,
 } from 'vue'
 
 export type ColumnProps = {}
 
-export const Column = (_: ColumnProps, {
+export const Column: FunctionalComponent<ColumnProps> = (_: ColumnProps, {
 	slots,
-}: SetupContext): VNode => h('div', {
+}): VNode => h('div', {
 	class: 'column',
 }, {
 	default: () => slots.default?.(),

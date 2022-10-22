@@ -33,14 +33,14 @@
 import {
 	h,
 	VNode,
-	SetupContext,
+	FunctionalComponent,
 } from 'vue'
 
 export type UnorderedListProps = {}
 
-export const UnorderedList = (_: UnorderedListProps, {
+export const UnorderedList: FunctionalComponent<UnorderedListProps> = (_, {
 	slots,
-}: SetupContext): VNode => h('ul', {
+}): VNode => h('ul', {
 	class: 'unordered-list',
 }, {
 	default: () => slots.default?.(),

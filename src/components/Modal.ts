@@ -33,14 +33,14 @@
 import {
 	h,
 	VNode,
-	SetupContext,
+	FunctionalComponent,
 } from 'vue'
 
 export type ModalProps = {}
 
-export const Modal = (_: ModalProps, {
+export const Modal: FunctionalComponent<ModalProps> = (_, {
 	slots,
-}: SetupContext): VNode => h('div', {
+}): VNode => h('div', {
 	class: 'modal',
 }, {
 	default: () => slots.default?.(),

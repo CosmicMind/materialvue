@@ -33,14 +33,14 @@
 import {
 	h,
 	VNode,
-	SetupContext,
+	FunctionalComponent,
 } from 'vue'
 
 export type NavigationDrawerProps = {}
 
-export const NavigationDrawer = (_: NavigationDrawerProps, {
+export const NavigationDrawer: FunctionalComponent<NavigationDrawerProps> = (_, {
 	slots,
-}: SetupContext): VNode => h('div', {
+}): VNode => h('div', {
 	class: 'navigation-drawer',
 }, {
 	default: () => slots.default?.(),

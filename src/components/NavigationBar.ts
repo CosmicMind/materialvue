@@ -33,14 +33,14 @@
 import {
 	h,
 	VNode,
-	SetupContext,
+	FunctionalComponent,
 } from 'vue'
 
 export type NavigationBarProps = {}
 
-export const NavigationBar = (_: NavigationBarProps, {
+export const NavigationBar: FunctionalComponent<NavigationBarProps> = (_, {
 	slots,
-}: SetupContext): VNode => h('div', {
+}): VNode => h('div', {
 	class: 'navigation-bar',
 }, {
 	default: () => slots.default?.(),

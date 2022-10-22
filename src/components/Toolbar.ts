@@ -33,14 +33,14 @@
 import {
 	h,
 	VNode,
-	SetupContext,
+	FunctionalComponent,
 } from 'vue'
 
 export type ToolbarProps = {}
 
-export const Toolbar = (_: ToolbarProps, {
+export const Toolbar: FunctionalComponent<ToolbarProps> = (_, {
 	slots,
-}: SetupContext): VNode => h('div', {
+}): VNode => h('div', {
 	class: 'toolbar',
 }, {
 	default: () => slots.default?.(),

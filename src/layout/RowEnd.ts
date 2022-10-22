@@ -33,14 +33,14 @@
 import {
 	h,
 	VNode,
-	SetupContext,
+	FunctionalComponent,
 } from 'vue'
 
 export type RowEndProps = {}
 
-export const RowEnd = (_: RowEndProps, {
+export const RowEnd: FunctionalComponent<RowEndProps> = (_, {
 	slots,
-}: SetupContext): VNode => h('div', {
+}): VNode => h('div', {
 	class: 'row-end',
 }, {
 	default: () => slots.default?.(),

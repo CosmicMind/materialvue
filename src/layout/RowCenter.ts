@@ -33,14 +33,14 @@
 import {
 	h,
 	VNode,
-	SetupContext,
+	FunctionalComponent,
 } from 'vue'
 
 export type RowCenterProps = {}
 
-export const RowCenter = (_: RowCenterProps, {
+export const RowCenter: FunctionalComponent<RowCenterProps> = (_, {
 	slots,
-}: SetupContext): VNode => h('div', {
+}): VNode => h('div', {
 	class: 'row-center',
 }, {
 	default: () => slots.default?.(),

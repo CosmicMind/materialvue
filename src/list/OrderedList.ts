@@ -33,14 +33,14 @@
 import {
 	h,
 	VNode,
-	SetupContext,
+	FunctionalComponent,
 } from 'vue'
 
 export type OrderedListProps = {}
 
-export const OrderedList = (_: OrderedListProps, {
+export const OrderedList: FunctionalComponent<OrderedListProps> = (_, {
 	slots,
-}: SetupContext): VNode => h('ol', {
+}): VNode => h('ol', {
 	class: 'ordered-list',
 }, {
 	default: () => slots.default?.(),
