@@ -46,6 +46,6 @@ export const RowCenter: FunctionalComponent<RowCenterProps> = (_, {
 	default: () => slots.default?.(),
 })
 
-RowCenter.props = [] as string[]
+RowCenter.props = []
 
 export default RowCenter

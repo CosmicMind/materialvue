@@ -46,6 +46,6 @@ export const RowStart: FunctionalComponent<RowStartProps> = (_, {
 	default: () => slots.default?.(),
 })
 
-RowStart.props = [] as string[]
+RowStart.props = []
 
 export default RowStart

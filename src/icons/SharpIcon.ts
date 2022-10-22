@@ -38,29 +38,20 @@ import {
 
 import {
 	Icon,
-	IconFill,
 	IconStyle,
 } from '@/icons/Icon'
 
-export type SharpIconProps = {
-	fill: IconFill
-}
+export type SharpIconProps = {}
 
-export const SharpIcon: FunctionalComponent<SharpIconProps> = ({
-	fill,
-}, {
+export const SharpIcon: FunctionalComponent<SharpIconProps> = (_, {
 	slots,
 }): VNode => h(Icon, {
-	fill,
 	style: IconStyle.sharp,
 }, {
 	default: () => slots.default?.(),
 })
 
 SharpIcon.displayName = 'SharpIcon'
-
-SharpIcon.props = [
-	'fill'
-]
+SharpIcon.props = []
 
 export default SharpIcon

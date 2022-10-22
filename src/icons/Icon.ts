@@ -42,33 +42,24 @@ export enum IconStyle {
 	sharp = 'sharp',
 }
 
-export enum IconFill {
-  filled = 'filled'
-}
-
 export type IconProps = {
-	style: IconStyle,
-	fill: IconFill
+	style: IconStyle
 }
 
 export const Icon: FunctionalComponent<IconProps> = ({
 	style,
-	fill,
 }, {
 	slots,
-}): VNode => {
-	return h('span', {
-		class: `material-symbols-${style} icon ${style} ${fill}`,
-	}, {
-		default: () => slots.default?.(),
-	})
-}
+}): VNode => h('span', {
+	class: `material-symbols-${style} icon ${style}`,
+}, {
+	default: () => slots.default?.(),
+})
 
 Icon.displayName = 'Icon'
 
 Icon.props = [
-	'style',
-	'fill'
+	'style'
 ]
 
 export default Icon

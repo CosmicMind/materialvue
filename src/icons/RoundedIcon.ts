@@ -38,29 +38,20 @@ import {
 
 import {
 	Icon,
-	IconFill,
 	IconStyle,
 } from '@/icons/Icon'
 
-export type RoundedIconProps = {
-	fill: IconFill
-}
+export type RoundedIconProps = {}
 
-export const RoundedIcon: FunctionalComponent<RoundedIconProps> = ({
-	fill,
-}, {
+export const RoundedIcon: FunctionalComponent<RoundedIconProps> = (_, {
 	slots,
 }): VNode => h(Icon, {
-	fill,
 	style: IconStyle.rounded,
 }, {
 	default: () => slots.default?.(),
 })
 
 RoundedIcon.displayName = 'RoundedIcon'
-
-RoundedIcon.props = [
-	'fill'
-]
+RoundedIcon.props = []
 
 export default RoundedIcon

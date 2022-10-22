@@ -46,6 +46,6 @@ export const UnorderedList: FunctionalComponent<UnorderedListProps> = (_, {
 	default: () => slots.default?.(),
 })
 
-UnorderedList.props = [] as string[]
+UnorderedList.props = []
 
 export default UnorderedList

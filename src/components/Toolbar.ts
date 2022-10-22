@@ -46,6 +46,6 @@ export const Toolbar: FunctionalComponent<ToolbarProps> = (_, {
 	default: () => slots.default?.(),
 })
 
-Toolbar.props = [] as string[]
+Toolbar.props = []
 
 export default Toolbar

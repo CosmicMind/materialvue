@@ -62,7 +62,6 @@ export {
 export {
 	Icon,
 	IconStyle,
-	IconFill,
 	OutlinedIcon,
 	RoundedIcon,
 	SharpIcon,

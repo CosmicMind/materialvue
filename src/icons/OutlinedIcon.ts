@@ -38,29 +38,20 @@ import {
 
 import {
 	Icon,
-	IconFill,
 	IconStyle,
 } from '@/icons/Icon'
 
-export type OutlinedIconProps = {
-	fill: IconFill
-}
+export type OutlinedIconProps = {}
 
-export const OutlinedIcon: FunctionalComponent<OutlinedIconProps> = ({
-	fill,
-}, {
+export const OutlinedIcon: FunctionalComponent<OutlinedIconProps> = (_, {
 	slots,
 }): VNode => h(Icon, {
-	fill,
 	style: IconStyle.outlined,
 }, {
 	default: () => slots.default?.(),
 })
 
 OutlinedIcon.displayName = 'OutlinedIcon'
-
-OutlinedIcon.props = [
-	'fill'
-]
+OutlinedIcon.props = []
 
 export default OutlinedIcon

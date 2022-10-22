@@ -46,6 +46,6 @@ export const Modal: FunctionalComponent<ModalProps> = (_, {
 	default: () => slots.default?.(),
 })
 
-Modal.props = [] as string[]
+Modal.props = []
 
 export default Modal

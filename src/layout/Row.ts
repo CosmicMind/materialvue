@@ -46,6 +46,6 @@ export const Row: FunctionalComponent<RowProps> = (_, {
 	default: () => slots.default?.(),
 })
 
-Row.props = [] as string[]
+Row.props = []
 
 export default Row

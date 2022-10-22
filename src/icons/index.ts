@@ -33,7 +33,6 @@
 export {
 	Icon,
 	IconStyle,
-	IconFill,
 } from '@/icons/Icon'
 
 export {

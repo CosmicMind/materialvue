@@ -46,6 +46,6 @@ export const NavigationDrawer: FunctionalComponent<NavigationDrawerProps> = (_, 
 	default: () => slots.default?.(),
 })
 
-NavigationDrawer.props = [] as string[]
+NavigationDrawer.props = []
 
 export default NavigationDrawer

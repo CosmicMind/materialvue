@@ -46,6 +46,6 @@ export const Sidebar: FunctionalComponent<SidebarProps> = (_, {
 	default: () => slots.default?.(),
 })
 
-Sidebar.props = [] as string[]
+Sidebar.props = []
 
 export default Sidebar

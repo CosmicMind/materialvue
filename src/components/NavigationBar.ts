@@ -46,6 +46,6 @@ export const NavigationBar: FunctionalComponent<NavigationBarProps> = (_, {
 	default: () => slots.default?.(),
 })
 
-NavigationBar.props = [] as string[]
+NavigationBar.props = []
 
 export default NavigationBar
