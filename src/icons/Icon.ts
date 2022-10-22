@@ -36,31 +36,39 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-import {
-	Typography,
-	TypographySize,
-	TypographyStyle,
-} from '@/typography/Typography'
-
-export type BodyProps = {
-	size: TypographySize
+export enum IconStyle {
+  outlined = 'outlined',
+	rounded = 'rounded',
+	sharp = 'sharp',
 }
 
-export const Body: FunctionalComponent<BodyProps> = ({
-	size,
+export enum IconFill {
+  filled = 'filled'
+}
+
+export type IconProps = {
+	style: IconStyle,
+	fill: IconFill
+}
+
+export const Icon: FunctionalComponent<IconProps> = ({
+	style,
+	fill,
 }, {
 	slots,
-}): VNode => h(Typography, {
-	size,
-	style: TypographyStyle.body,
-}, {
-	default: () => slots.default?.(),
-})
+}): VNode => {
+	return h('span', {
+		class: `material-symbols-${style} icon ${style} ${fill}`,
+	}, {
+		default: () => slots.default?.(),
+	})
+}
 
-Body.displayName = 'Body'
+Icon.displayName = 'Icon'
 
-Body.props = [
-	'size'
+Icon.props = [
+	'style',
+	'fill'
 ]
 
-export default Body
+export default Icon

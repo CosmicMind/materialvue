@@ -37,30 +37,30 @@ import {
 } from 'vue'
 
 import {
-	Typography,
-	TypographySize,
-	TypographyStyle,
-} from '@/typography/Typography'
+	Icon,
+	IconFill,
+	IconStyle,
+} from '@/icons/Icon'
 
-export type BodyProps = {
-	size: TypographySize
+export type OutlinedIconProps = {
+	fill: IconFill
 }
 
-export const Body: FunctionalComponent<BodyProps> = ({
-	size,
+export const OutlinedIcon: FunctionalComponent<OutlinedIconProps> = ({
+	fill,
 }, {
 	slots,
-}): VNode => h(Typography, {
-	size,
-	style: TypographyStyle.body,
+}): VNode => h(Icon, {
+	fill,
+	style: IconStyle.outlined,
 }, {
 	default: () => slots.default?.(),
 })
 
-Body.displayName = 'Body'
+OutlinedIcon.displayName = 'OutlinedIcon'
 
-Body.props = [
-	'size'
+OutlinedIcon.props = [
+	'fill'
 ]
 
-export default Body
+export default OutlinedIcon

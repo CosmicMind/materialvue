@@ -28,6 +28,7 @@
     "build": "vite build --mode production",
     "watch": "vite build --watch --mode development",
     "test:unit": "vitest run",
+    "test:watch": "vitest",
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {

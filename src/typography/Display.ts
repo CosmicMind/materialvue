@@ -33,27 +33,31 @@
 import {
 	h,
 	VNode,
-	SetupContext,
+	FunctionalComponent,
 } from 'vue'
 
 import {
-	TypographyStyle,
+	Typography,
 	TypographySize,
+	TypographyStyle,
 } from '@/typography/Typography'
 
 export type DisplayProps = {
 	size: TypographySize
 }
 
-export const Display = ({
+export const Display: FunctionalComponent<DisplayProps> = ({
 	size,
-}: DisplayProps, {
+}, {
 	slots,
-}: SetupContext): VNode => h('span', {
-	class: `typography ${TypographyStyle.display} ${size}`,
+}): VNode => h(Typography, {
+	size,
+	style: TypographyStyle.display,
 }, {
 	default: () => slots.default?.(),
 })
+
+Display.displayName = 'Display'
 
 Display.props = [
 	'size'

@@ -33,27 +33,31 @@
 import {
 	h,
 	VNode,
-	SetupContext,
+	FunctionalComponent,
 } from 'vue'
 
 import {
-	TypographyStyle,
+	Typography,
 	TypographySize,
+	TypographyStyle,
 } from '@/typography/Typography'
 
 export type LabelProps = {
 	size: TypographySize
 }
 
-export const Label = ({
+export const Label: FunctionalComponent<LabelProps> = ({
 	size,
-}: LabelProps, {
+}, {
 	slots,
-}: SetupContext): VNode => h('span', {
-	class: `typography ${TypographyStyle.label} ${size}`,
+}): VNode => h(Typography, {
+	size,
+	style: TypographyStyle.label,
 }, {
 	default: () => slots.default?.(),
 })
+
+Label.displayName = 'Label'
 
 Label.props = [
 	'size'

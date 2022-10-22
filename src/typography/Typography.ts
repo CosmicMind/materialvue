@@ -33,7 +33,7 @@
 import {
 	h,
 	VNode,
-	SetupContext,
+	FunctionalComponent,
 } from 'vue'
 
 export enum TypographyStyle {
@@ -55,16 +55,20 @@ export type TypographyProps = {
 	size: TypographySize
 }
 
-export const Typography = ({
+export const Typography: FunctionalComponent<TypographyProps> = ({
 	style,
 	size,
-}: TypographyProps, {
-	slots,
-}: SetupContext): VNode => h('span', {
-	class: `typography ${style} ${size}`,
 }, {
-	default: () => slots.default?.(),
-})
+	slots,
+}): VNode => {
+	return h('span', {
+		class: `typography ${style} ${size}`,
+	}, {
+		default: () => slots.default?.(),
+	})
+}
+
+Typography.displayName = 'Typography'
 
 Typography.props = [
 	'style',

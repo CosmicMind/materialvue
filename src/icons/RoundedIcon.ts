@@ -37,30 +37,30 @@ import {
 } from 'vue'
 
 import {
-	Typography,
-	TypographySize,
-	TypographyStyle,
-} from '@/typography/Typography'
+	Icon,
+	IconFill,
+	IconStyle,
+} from '@/icons/Icon'
 
-export type BodyProps = {
-	size: TypographySize
+export type RoundedIconProps = {
+	fill: IconFill
 }
 
-export const Body: FunctionalComponent<BodyProps> = ({
-	size,
+export const RoundedIcon: FunctionalComponent<RoundedIconProps> = ({
+	fill,
 }, {
 	slots,
-}): VNode => h(Typography, {
-	size,
-	style: TypographyStyle.body,
+}): VNode => h(Icon, {
+	fill,
+	style: IconStyle.rounded,
 }, {
 	default: () => slots.default?.(),
 })
 
-Body.displayName = 'Body'
+RoundedIcon.displayName = 'RoundedIcon'
 
-Body.props = [
-	'size'
+RoundedIcon.props = [
+	'fill'
 ]
 
-export default Body
+export default RoundedIcon

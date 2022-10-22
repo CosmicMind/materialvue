@@ -31,12 +31,14 @@
  */
 
 export {
-	TypographySize,
 	Display,
 	Headline,
 	Title,
 	Label,
 	Body,
+	Typography,
+	TypographyStyle,
+	TypographySize,
 } from './typography'
 
 export {
@@ -59,7 +61,12 @@ export {
 
 export {
 	Icon,
-} from './elements'
+	IconStyle,
+	IconFill,
+	OutlinedIcon,
+	RoundedIcon,
+	SharpIcon,
+} from './icons'
 
 export {
 	Row,

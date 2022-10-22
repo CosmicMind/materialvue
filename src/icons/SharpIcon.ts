@@ -30,6 +30,37 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
+
+import {
 	Icon,
-} from './Icon'
+	IconFill,
+	IconStyle,
+} from '@/icons/Icon'
+
+export type SharpIconProps = {
+	fill: IconFill
+}
+
+export const SharpIcon: FunctionalComponent<SharpIconProps> = ({
+	fill,
+}, {
+	slots,
+}): VNode => h(Icon, {
+	fill,
+	style: IconStyle.sharp,
+}, {
+	default: () => slots.default?.(),
+})
+
+SharpIcon.displayName = 'SharpIcon'
+
+SharpIcon.props = [
+	'fill'
+]
+
+export default SharpIcon

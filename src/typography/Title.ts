@@ -33,27 +33,31 @@
 import {
 	h,
 	VNode,
-	SetupContext,
+	FunctionalComponent,
 } from 'vue'
 
 import {
-	TypographyStyle,
+	Typography,
 	TypographySize,
+	TypographyStyle,
 } from '@/typography/Typography'
 
 export type TitleProps = {
 	size: TypographySize
 }
 
-export const Title = ({
+export const Title: FunctionalComponent<TitleProps> = ({
 	size,
-}: TitleProps, {
+}, {
 	slots,
-}: SetupContext): VNode => h('span', {
-	class: `typography ${TypographyStyle.title} ${size}`,
+}): VNode => h(Typography, {
+	size,
+	style: TypographyStyle.title,
 }, {
 	default: () => slots.default?.(),
 })
+
+Title.displayName = 'Title'
 
 Title.props = [
 	'size'

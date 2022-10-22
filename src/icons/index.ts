@@ -30,37 +30,20 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-import {
-	h,
-	VNode,
-	FunctionalComponent,
-} from 'vue'
+export {
+	Icon,
+	IconStyle,
+	IconFill,
+} from '@/icons/Icon'
 
-import {
-	Typography,
-	TypographySize,
-	TypographyStyle,
-} from '@/typography/Typography'
+export {
+	OutlinedIcon,
+} from '@/icons/OutlinedIcon'
 
-export type BodyProps = {
-	size: TypographySize
-}
+export {
+	RoundedIcon,
+} from '@/icons/RoundedIcon'
 
-export const Body: FunctionalComponent<BodyProps> = ({
-	size,
-}, {
-	slots,
-}): VNode => h(Typography, {
-	size,
-	style: TypographyStyle.body,
-}, {
-	default: () => slots.default?.(),
-})
-
-Body.displayName = 'Body'
-
-Body.props = [
-	'size'
-]
-
-export default Body
+export {
+	SharpIcon,
+} from '@/icons/SharpIcon'

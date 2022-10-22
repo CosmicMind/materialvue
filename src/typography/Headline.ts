@@ -33,27 +33,31 @@
 import {
 	h,
 	VNode,
-	SetupContext,
+	FunctionalComponent,
 } from 'vue'
 
 import {
-	TypographyStyle,
+	Typography,
 	TypographySize,
+	TypographyStyle,
 } from '@/typography/Typography'
 
 export type HeadlineProps = {
 	size: TypographySize
 }
 
-export const Headline = ({
+export const Headline: FunctionalComponent<HeadlineProps> = ({
 	size,
-}: HeadlineProps, {
+}, {
 	slots,
-}: SetupContext): VNode => h('span', {
-	class: `typography ${TypographyStyle.headline} ${size}`,
+}): VNode => h(Typography, {
+	size,
+	style: TypographyStyle.headline,
 }, {
 	default: () => slots.default?.(),
 })
+
+Headline.displayName = 'Headline'
 
 Headline.props = [
 	'size'
